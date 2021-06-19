@@ -1,5 +1,6 @@
 S        := ${.CURDIR}
 O        :=
+O_DL     := dl
 O_TMP    := tmp
 O_TABLES := tables
 
@@ -19,6 +20,7 @@ all: build
 
 PHONY += clean
 clean:
+	[ ! -d '${O_DL}' ] || { find ${O_DL} -maxdepth 1 -type f -delete && rmdir ${O_DL}; }
 	[ ! -d '${O_TMP}' ] || { find ${O_TMP} -maxdepth 1 -type f -delete && rmdir ${O_TMP}; }
 	[ ! -d '${O_TABLES}' ] || { find '${O_TABLES}' -maxdepth 1 -type f -delete && rmdir ${O_TABLES}; }
 

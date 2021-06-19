@@ -12,3 +12,13 @@ TABLES_INSTALL_DIR = ${SHAREDIR}/${PN}
 
 MV = mv
 MVF = ${MV} -f --
+
+X_DOWNLOAD = ftp -MnV
+#X_DOWNLOAD = curl
+
+SKIP_DL ?= 0
+.if ${SKIP_DL} == 1
+DEP_DL =
+.else
+DEP_DL = FORCE
+.endif
