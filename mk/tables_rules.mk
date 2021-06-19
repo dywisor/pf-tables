@@ -1,8 +1,3 @@
-_EMPTY_SRC = ${SRC}/empty
-
-TABLE_BUILD_TARGETS =
-TABLE_INSTALL_TARGETS =
-
 # fill up table config vars
 # ========================================================================
 .for table_name in ${TABLES}
@@ -48,7 +43,7 @@ PHONY += tables-list
 BUILD_TARGETS += tables-list
 tables-list: ${O_TABLES}/list
 
-${O_TABLES}/list:
+${O_TABLES}/list: FORCE
 	${MKDIRP} ${@D}
 	{ set -efu; \
 		printf '%s\n' ${TABLES} \
