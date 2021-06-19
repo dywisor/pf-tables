@@ -15,7 +15,7 @@ BUILD_TARGETS =
 INSTALL_TARGETS =
 
 PHONY += all
-all: tables
+all: build
 
 PHONY += clean
 clean:
