@@ -28,8 +28,10 @@ clean:
 .include "${MK}/install_vars.mk"
 .include "${MK}/vars.mk"
 .include "${MK}/tables_rules_def.mk"
+.include "${MK}/tables_geo.mk"
 .include "${MK}/tables_def.mk"
 -include "${LOCALDIR}/tables_def.mk"
+.include "${MK}/tables_rules_geo.mk"
 .include "${MK}/tables_rules.mk"
 
 
